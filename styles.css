@@ -1,6 +1,5 @@
 body {
-    background: url('assets/background-fogPaw1.svg') no-repeat;
-    background-size: cover;
+    background-image: url('assets/background-dogPaw.jpg');
 }
 
 .container-home {
@@ -21,24 +20,27 @@ body {
     display: flex;
     flex-direction: column;
     margin: 5px 0;
-
 }
 
 .input-container label {
     margin-bottom: 5px;
 }
 
+.option-bold {
+    font-weight: bold;
+}
+
 .input-container input,
-textarea {
+textarea,
+select {
     width: 100%;
     box-sizing: border-box;
     height: 35px;
     border-radius: 8px;
-    border: 1px solid #a9084b;
     font-size: 18px;
-    outline-color: #802680;
+    border: 1px solid #a9480b;
+    outline-color: #802600;
     resize: vertical;
-
 }
 
 .input-container textarea {
@@ -48,30 +50,32 @@ textarea {
 .form-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-
+    /* margin: 10px; */
 }
 
 .flex-45 {
     flex-basis: 45%;
 }
 
-.option-bold {
-    font-weight: bold;
+.button-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .button-submit {
     width: 100px;
     border-radius: 8px;
-    color: #FFF;
-    background-color: #802600;
+    height: 34px;
+    background-color: #FFF;
+    color: #802600;
     margin-top: 10px;
+    border: 1px solid #802600;
+    cursor: pointer;
 }
 
-.footer-app p {
-    text-align: center;
-    color: #fff;
-    font-size: 18x;
+.button-submit:hover {
+    background-color: #802600;
+    color: #FFF;
 }
 
 .footer-app {
@@ -82,12 +86,14 @@ textarea {
     background-color: #a9480b;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
+.footer-app p {
+    text-align: center;
+    color: #fff;
+    font-size: 18x;
 }
 
 @media (max-width: 800px) {
+
     .form-row {
         flex-direction: column;
     }
@@ -95,4 +101,44 @@ textarea {
     .container-home {
         width: 90%;
     }
+}
+
+/*  CSS da tela de listagem pets  */
+.container-pets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.item-pet {
+    background-color: #FFF;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-pet img {
+    object-fit: cover;
+}
+
+.menu {
+    height: 50px;
+    background-color: #802600;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.menu a {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
 }

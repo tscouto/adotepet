@@ -66,21 +66,25 @@ function adicionarPet(event) {
     document.getElementById('error-tipo').innerText = '';
     document.getElementById('error-tipo').style.color = '';
   }
+  if (nome && foto && descricao && tipo) {
+    const pet = {
+      id: Date.now(),
+      foto: foto,
+      nome: nome,
+      idade: idade,
+      cor: cor,
+      descricao: descricao,
+      tipo: tipo,
+    };
 
-  const pet = {
-    foto: foto,
-    nome: nome,
-    idade: idade,
-    cor: cor,
-    descricao: descricao,
-    tipo: tipo,
-  };
+    let listaContatos = JSON.parse(localStorage.getItem('pets'));
 
-  const listaContatos = JSON.parse(localStorage.getItem('pets'));
-  listaContatos.push(pet);
-  localStorage.setItem('pets', JSON.stringify(listaContatos));
-
-  console.log(pet);
+    if (listaContatos === null) listaContatos = [];
+    listaContatos.push(pet);
+    localStorage.setItem('pets', JSON.stringify(listaContatos));
+    document.getElementById('form-pet').reset();
+    console.log(pet);
+  }
 }
 
 document // seu documento HTML
